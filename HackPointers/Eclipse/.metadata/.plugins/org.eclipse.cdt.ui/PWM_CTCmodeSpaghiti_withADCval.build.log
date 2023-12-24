@@ -1,0 +1,66 @@
+09:18:42 **** Incremental Build of configuration Debug for project PWM_CTCmodeSpaghiti_withADCval ****
+make all 
+Building target: PWM_CTCmodeSpaghiti_withADCval.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,PWM_CTCmodeSpaghiti_withADCval.map -mmcu=atmega32 -o "PWM_CTCmodeSpaghiti_withADCval.elf"  ./MADC_program.o ./MDIO_program.o ./MGIE_pogram.o ./MTIM_program.o ./main.o   
+Finished building target: PWM_CTCmodeSpaghiti_withADCval.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S PWM_CTCmodeSpaghiti_withADCval.elf  >"PWM_CTCmodeSpaghiti_withADCval.lss"
+Finished building: PWM_CTCmodeSpaghiti_withADCval.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex PWM_CTCmodeSpaghiti_withADCval.elf  "PWM_CTCmodeSpaghiti_withADCval.hex"
+Finished building: PWM_CTCmodeSpaghiti_withADCval.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 PWM_CTCmodeSpaghiti_withADCval.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8788 bytes (26.8% Full)
+(.text + .data + .bootloader)
+
+Data:        274 bytes (13.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm32 -cusbasp -Uflash:w:PWM_CTCmodeSpaghiti_withADCval.hex:a
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9502
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "PWM_CTCmodeSpaghiti_withADCval.hex"
+avrdude: input file PWM_CTCmodeSpaghiti_withADCval.hex auto detected as Intel Hex
+avrdude: writing flash (8788 bytes):
+
+Writing | ################################################## | 100% 4.40s
+
+avrdude: 8788 bytes of flash written
+avrdude: verifying flash memory against PWM_CTCmodeSpaghiti_withADCval.hex:
+avrdude: load data flash data from input file PWM_CTCmodeSpaghiti_withADCval.hex:
+avrdude: input file PWM_CTCmodeSpaghiti_withADCval.hex auto detected as Intel Hex
+avrdude: input file PWM_CTCmodeSpaghiti_withADCval.hex contains 8788 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 2.24s
+
+avrdude: verifying ...
+avrdude: 8788 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+09:18:50 Build Finished. 0 errors, 0 warnings. (took 8s.258ms)
+

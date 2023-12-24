@@ -1,0 +1,38 @@
+11:52:21 **** Incremental Build of configuration Debug for project DIO_DriverTest ****
+make all 
+Building file: ../MDIO_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MDIO_program.d" -MT"MDIO_program.o" -c -o "MDIO_program.o" "../MDIO_program.c"
+Finished building: ../MDIO_program.c
+ 
+Building target: DIO_DriverTest.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DIO_DriverTest.map -mmcu=atmega32 -o "DIO_DriverTest.elf"  ./MDIO_program.o ./main.o   
+Finished building target: DIO_DriverTest.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DIO_DriverTest.elf  >"DIO_DriverTest.lss"
+Finished building: DIO_DriverTest.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DIO_DriverTest.elf  "DIO_DriverTest.hex"
+Finished building: DIO_DriverTest.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO_DriverTest.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2572 bytes (7.8% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+11:52:21 Build Finished. 0 errors, 0 warnings. (took 568ms)
+

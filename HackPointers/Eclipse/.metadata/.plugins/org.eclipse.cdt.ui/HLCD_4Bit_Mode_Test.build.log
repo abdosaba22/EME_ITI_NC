@@ -1,0 +1,47 @@
+18:11:06 **** Incremental Build of configuration Debug for project HLCD_4Bit_Mode_Test ****
+make all 
+Building file: ../HLCD_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"HLCD_program.d" -MT"HLCD_program.o" -c -o "HLCD_program.o" "../HLCD_program.c"
+In file included from ../HLCD_program.c:14:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HLCD_program.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: HLCD_4Bit_Mode_Test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,HLCD_4Bit_Mode_Test.map -mmcu=atmega32 -o "HLCD_4Bit_Mode_Test.elf"  ./HLCD_program.o ./MDIO_program.o ./main.o   
+Finished building target: HLCD_4Bit_Mode_Test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S HLCD_4Bit_Mode_Test.elf  >"HLCD_4Bit_Mode_Test.lss"
+Finished building: HLCD_4Bit_Mode_Test.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex HLCD_4Bit_Mode_Test.elf  "HLCD_4Bit_Mode_Test.hex"
+Finished building: HLCD_4Bit_Mode_Test.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 HLCD_4Bit_Mode_Test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   13892 bytes (42.4% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+18:11:07 Build Finished. 0 errors, 2 warnings. (took 828ms)
+

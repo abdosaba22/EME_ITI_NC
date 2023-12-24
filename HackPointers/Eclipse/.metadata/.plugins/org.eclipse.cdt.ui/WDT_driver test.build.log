@@ -1,0 +1,18 @@
+11:43:24 **** Incremental Build of configuration Debug for project WDT_driver test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:2:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: WDT_driver test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,WDT_driver test.map -mmcu=atmega32 -o "WDT_driver test.elf"  ./MDIO_program.o ./MWDT_program.o ./main.o   
+avr-gcc.exe: test.map: No such file or directory
+make: *** [WDT_driver test.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+11:43:24 Build Failed. 1 errors, 1 warnings. (took 309ms)
+

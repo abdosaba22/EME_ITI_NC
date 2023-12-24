@@ -1,0 +1,49 @@
+21:34:37 **** Incremental Build of configuration Debug for project UART_Driver_Test ****
+make all 
+Building file: ../MDIO_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MDIO_program.d" -MT"MDIO_program.o" -c -o "MDIO_program.o" "../MDIO_program.c"
+Finished building: ../MDIO_program.c
+ 
+Building file: ../MGIE_pogram.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MGIE_pogram.d" -MT"MGIE_pogram.o" -c -o "MGIE_pogram.o" "../MGIE_pogram.c"
+Finished building: ../MGIE_pogram.c
+ 
+Building file: ../MUART_program.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"MUART_program.d" -MT"MUART_program.o" -c -o "MUART_program.o" "../MUART_program.c"
+Finished building: ../MUART_program.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: UART_Driver_Test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,UART_Driver_Test.map -mmcu=atmega32 -o "UART_Driver_Test.elf"  ./MDIO_program.o ./MGIE_pogram.o ./MUART_program.o ./main.o   
+Finished building target: UART_Driver_Test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S UART_Driver_Test.elf  >"UART_Driver_Test.lss"
+Finished building: UART_Driver_Test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 UART_Driver_Test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    4372 bytes (13.3% Full)
+(.text + .data + .bootloader)
+
+Data:          6 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+21:34:39 Build Finished. 0 errors, 0 warnings. (took 1s.561ms)
+

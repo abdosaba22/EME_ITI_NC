@@ -1,0 +1,7 @@
+15:02:54 **** Clean-only build of configuration Debug for project NVM_TWI_Test ****
+make clean 
+rm -rf  NVM_TWI_Test.hex  ./HLCD_program.o ./HNVM_program.o ./MDIO_program.o ./MTWI_program.o ./main.o  sizedummy  NVM_TWI_Test.lss  ./HLCD_program.d ./HNVM_program.d ./MDIO_program.d ./MTWI_program.d ./main.d  NVM_TWI_Test.elf
+ 
+
+15:02:54 Build Finished. 0 errors, 0 warnings. (took 216ms)
+

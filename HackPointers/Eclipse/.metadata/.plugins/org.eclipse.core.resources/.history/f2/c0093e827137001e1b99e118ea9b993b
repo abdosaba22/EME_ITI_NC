@@ -1,0 +1,37 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 10, 2023
+ *      Author: DELL
+ */
+
+
+#define F_CPU 		8000000UL
+#include <util/delay.h>
+
+#include "LSTD_types.h"
+
+#include "MDIO_interface.h"
+
+//#include "HLCD_interface.h"
+
+
+
+int main(void){
+	// Initialization  (Run Once)
+
+	//HLCD_voidInit();
+//_delay_ms(5000);
+	//HLCD_voidSetCur(0,0);
+	//HLCD_voidSendString("^_^");
+	MDIO_stderrSetPinDirection(MDIO_PORTD,MDIO_PIN0,MDIO_OUTPUT);
+	_delay_ms(1000);
+	MDIO_stderrSetPinValue(MDIO_PORTD,MDIO_PIN0,MDIO_HIGH);
+	_delay_ms(5000);
+		MDIO_stderrSetPinValue(MDIO_PORTD,MDIO_PIN0,MDIO_LOW);
+
+	while(1){
+		// Application (Run )
+	}
+	return 0;
+}

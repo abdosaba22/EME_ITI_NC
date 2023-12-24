@@ -1,0 +1,20 @@
+12:20:10 **** Incremental Build of configuration Debug for project UART_SpaghitiCode ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 UART_SpaghitiCode.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2930 bytes (8.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:20:11 Build Finished. 0 errors, 0 warnings. (took 158ms)
+

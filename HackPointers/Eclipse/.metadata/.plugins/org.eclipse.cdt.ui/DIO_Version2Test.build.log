@@ -1,0 +1,40 @@
+15:09:52 **** Incremental Build of configuration Debug for project DIO_Version2Test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: DIO_Version2Test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DIO_Version2Test.map -mmcu=atmega32 -o "DIO_Version2Test.elf"  ./MDIO_program.o ./main.o   
+Finished building target: DIO_Version2Test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DIO_Version2Test.elf  >"DIO_Version2Test.lss"
+Finished building: DIO_Version2Test.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DIO_Version2Test.elf  "DIO_Version2Test.hex"
+Finished building: DIO_Version2Test.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO_Version2Test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    6542 bytes (20.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:09:52 Build Finished. 0 errors, 1 warnings. (took 617ms)
+

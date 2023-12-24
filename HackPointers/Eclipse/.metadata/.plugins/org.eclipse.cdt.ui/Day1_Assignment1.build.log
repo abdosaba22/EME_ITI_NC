@@ -1,0 +1,40 @@
+12:42:05 **** Incremental Build of configuration Debug for project Day1_Assignment1 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:12:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../main.c
+ 
+Building target: Day1_Assignment1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Day1_Assignment1.map -mmcu=atmega32 -o "Day1_Assignment1.elf"  ./main.o   
+Finished building target: Day1_Assignment1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Day1_Assignment1.elf  >"Day1_Assignment1.lss"
+Finished building: Day1_Assignment1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Day1_Assignment1.elf  "Day1_Assignment1.hex"
+Finished building: Day1_Assignment1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Day1_Assignment1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3480 bytes (10.6% Full)
+(.text + .data + .bootloader)
+
+Data:         30 bytes (1.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+12:42:06 Build Finished. 0 errors, 1 warnings. (took 786ms)
+

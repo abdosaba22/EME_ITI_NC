@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 4 resources" deleteContents="false" description="Delete 4 resources" element1="/SPI_Master_spaghiti/HLCD_config.h" element2="/SPI_Master_spaghiti/HLCD_interface.h" element3="/SPI_Master_spaghiti/HLCD_private.h" element4="/SPI_Master_spaghiti/HLCD_program.c" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="4" stamp="1693080795021"/>
+</session>

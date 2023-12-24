@@ -1,0 +1,20 @@
+01:46:20 **** Incremental Build of configuration Debug for project HLCD_Driver_Test2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 HLCD_Driver_Test2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   10734 bytes (32.8% Full)
+(.text + .data + .bootloader)
+
+Data:         66 bytes (3.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+01:46:20 Build Finished. 0 errors, 0 warnings. (took 254ms)
+

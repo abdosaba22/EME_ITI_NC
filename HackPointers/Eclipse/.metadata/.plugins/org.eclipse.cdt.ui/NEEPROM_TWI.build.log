@@ -1,0 +1,33 @@
+22:45:53 **** Incremental Build of configuration Debug for project NEEPROM_TWI ****
+make all 
+Building target: NEEPROM_TWI.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,NEEPROM_TWI.map -mmcu=atmega32 -o "NEEPROM_TWI.elf"  ./HLCD_program.o ./HNVM_program.o ./MDIO_program.o ./MTWI_program.o ./main.o   
+Finished building target: NEEPROM_TWI.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S NEEPROM_TWI.elf  >"NEEPROM_TWI.lss"
+Finished building: NEEPROM_TWI.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex NEEPROM_TWI.elf  "NEEPROM_TWI.hex"
+Finished building: NEEPROM_TWI.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 NEEPROM_TWI.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   17390 bytes (53.1% Full)
+(.text + .data + .bootloader)
+
+Data:         50 bytes (2.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+22:45:53 Build Finished. 0 errors, 0 warnings. (took 564ms)
+

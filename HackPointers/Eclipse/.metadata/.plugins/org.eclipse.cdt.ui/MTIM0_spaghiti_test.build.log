@@ -1,0 +1,38 @@
+21:16:50 **** Incremental Build of configuration Debug for project MTIM0_spaghiti_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: MTIM0_spaghiti_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MTIM0_spaghiti_test.map -mmcu=atmega32 -o "MTIM0_spaghiti_test.elf"  ./MDIO_program.o ./MGIE_pogram.o ./MTIM_program.o ./main.o   
+Finished building target: MTIM0_spaghiti_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MTIM0_spaghiti_test.elf  >"MTIM0_spaghiti_test.lss"
+Finished building: MTIM0_spaghiti_test.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex MTIM0_spaghiti_test.elf  "MTIM0_spaghiti_test.hex"
+Finished building: MTIM0_spaghiti_test.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MTIM0_spaghiti_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8360 bytes (25.5% Full)
+(.text + .data + .bootloader)
+
+Data:        275 bytes (13.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+21:16:51 Build Finished. 0 errors, 0 warnings. (took 617ms)
+

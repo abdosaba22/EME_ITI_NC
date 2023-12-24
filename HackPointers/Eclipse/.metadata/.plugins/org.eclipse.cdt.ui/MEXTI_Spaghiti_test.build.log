@@ -1,0 +1,33 @@
+15:06:22 **** Incremental Build of configuration Debug for project MEXTI_Spaghiti_test ****
+make all 
+Building target: MEXTI_Spaghiti_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MEXTI_Spaghiti_test.map -mmcu=atmega32 -o "MEXTI_Spaghiti_test.elf"  ./MDIO_program.o ./main.o   
+Finished building target: MEXTI_Spaghiti_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MEXTI_Spaghiti_test.elf  >"MEXTI_Spaghiti_test.lss"
+Finished building: MEXTI_Spaghiti_test.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex MEXTI_Spaghiti_test.elf  "MEXTI_Spaghiti_test.hex"
+Finished building: MEXTI_Spaghiti_test.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MEXTI_Spaghiti_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3110 bytes (9.5% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+15:06:23 Build Finished. 0 errors, 0 warnings. (took 520ms)
+
